@@ -1,4 +1,5 @@
 import 'package:dairy_app/utils/constants/grid_item.dart';
+import 'package:dairy_app/views/widgets/custom_text.dart';
 import 'package:dairy_app/views/widgets/reuseable_searchFeild.dart';
 import 'package:dairy_app/views/widgets/reuseable_sizedBox.dart';
 import 'package:flutter/material.dart';
@@ -9,8 +10,14 @@ class UserHomePage extends StatelessWidget {
   final TextEditingController SearchController = TextEditingController();
 
   final List<GridItem> gridItems = [
-    GridItem(imagePath: 'assets/cowdp.png', text: 'Item 1'),
-    GridItem(imagePath: 'assets/circle_cow.png', text: 'Item 2'),
+    GridItem(imagePath: 'assets/circle_cow1.png', text: 'Malik Dairy'),
+    GridItem(imagePath: 'assets/circle_cow.png', text: 'ali Dairy'),
+    GridItem(imagePath: 'assets/circle_cow1.png', text: 'Malik Dairy'),
+    GridItem(imagePath: 'assets/circle_cow.png', text: 'ali Dairy'),
+    GridItem(imagePath: 'assets/circle_cow1.png', text: 'Malik Dairy'),
+    GridItem(imagePath: 'assets/circle_cow.png', text: 'ali Dairy'),
+    GridItem(imagePath: 'assets/circle_cow1.png', text: 'Malik Dairy'),
+    GridItem(imagePath: 'assets/circle_cow.png', text: 'ali Dairy'),
     // Add more items as needed
   ];
 
@@ -20,92 +27,172 @@ class UserHomePage extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      body: SizedBox(
-        height: screenHeight,
-        width: screenWidth,
-        child: Column(
-          children: [
-            ReusableSizedBox(height: screenHeight * 0.090),
-            SizedBox(
-              width: screenWidth,
-              height: screenHeight * 0.30,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 3,
-                itemBuilder: (context, index) => Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    height: screenHeight * 0.25,
-                    width: screenWidth * 0.95,
-                    decoration: BoxDecoration(
-                      color: Colors.blueGrey,
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow: const [
-                        BoxShadow(
-                          blurRadius: 2,
-                          spreadRadius: 1,
-                        ),
-                      ],
-                    ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed, // Ensures all buttons are visible
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add_business_outlined),
+            label: 'Shop',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: 'Favorites',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+        ],
+      ),
+      body: Column(
+        children: [
+          ReusableSizedBox(height: screenHeight * 0.090),
+          SizedBox(
+            width: screenWidth,
+            height: screenHeight * 0.30,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: 3,
+              itemBuilder: (context, index) => Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: screenHeight * 0.25,
+                  width: screenWidth * 0.95,
+                  decoration: BoxDecoration(
+                    color: Colors.deepPurple[100],
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: const [
+                      BoxShadow(
+                        blurRadius: 2,
+                        spreadRadius: 1,
+                      ),
+                    ],
                   ),
                 ),
               ),
             ),
-            ReusableSizedBox(height: screenHeight * 0.005),
-            Padding(
-              padding: EdgeInsets.only(left: screenWidth * 0.01),
-              child: const Row(
-                children: [
-                  Text(
-                    'Nearby You',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                    ),
+          ),
+          ReusableSizedBox(height: screenHeight * 0.005),
+          Padding(
+            padding: EdgeInsets.only(left: screenWidth * 0.01),
+            child: const Row(
+              children: [
+                Text(
+                  'Nearby You',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-            ReusableSizedBox(height: screenHeight * 0.010),
-            Expanded(
-              child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 4),
-                itemCount: gridItems.length,
-                itemBuilder: (context, index) {
-                  final griditem = gridItems[index];
-                  return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      height: screenHeight * 0.6,
-                      width: screenWidth * 0.12,
-                      decoration: const BoxDecoration(
-                        color: Colors.green,
-                      ),
-                      child: const Center(
-                          child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Column(
-                          children: [
-                            Image(image: AssetImage('assets/cowdp.png')),
-                            Text(
-                              '',
-                              //    gridItem[index],
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                              ),
-                            ),
-                          ],
-                        ),
-                      )),
+          ),
+          ReusableSizedBox(height: screenHeight * 0.010),
+          Flexible(
+            child: ListView.builder(
+              itemCount: gridItems.length,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                final gridItem = gridItems[index];
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    height: screenHeight * 0.07,
+                    width: screenWidth * 0.15,
+                    decoration: const BoxDecoration(
+                      color: Colors.purpleAccent,
                     ),
-                  );
-                },
+                    child: Center(
+                        child: Align(
+                      alignment: Alignment.topCenter,
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            gridItem.imagePath,
+                            height: screenHeight * 0.05,
+                            width: screenHeight * 0.05,
+                          ),
+                          SizedBox(height: screenHeight * 0.01),
+                          Text(
+                            gridItem.text,
+                            //    gridItem[index],
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
+                      ),
+                    )),
+                  ),
+                );
+              },
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: screenWidth * 0.01),
+            child: const Row(
+              children: [
+                Text(
+                  'Explore More',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          ReusableSizedBox(height: screenHeight * 0.010),
+          Flexible(
+            child: GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 4,
+                childAspectRatio: 1.0,
               ),
-            )
-          ],
-        ),
+              itemCount: gridItems.length,
+              itemBuilder: (context, index) {
+                final gridItem = gridItems[index];
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    height: screenHeight * 0.07,
+                    width: screenWidth * 0.15,
+                    decoration: const BoxDecoration(
+                      color: Colors.indigo,
+                    ),
+                    child: Center(
+                        child: Align(
+                      alignment: Alignment.topCenter,
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            gridItem.imagePath,
+                            height: screenHeight * 0.05,
+                            width: screenHeight * 0.05,
+                          ),
+                          SizedBox(height: screenHeight * 0.01),
+                          Text(
+                            gridItem.text,
+                            //    gridItem[index],
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
+                      ),
+                    )),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
