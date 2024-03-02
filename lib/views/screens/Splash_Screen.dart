@@ -11,9 +11,11 @@ class SplashScreen extends StatelessWidget {
       body: Stack(
         children: [
           Container(
+            height: MediaQuery.sizeOf(context).height,
+            width: MediaQuery.sizeOf(context).width,
             decoration: const BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('assets/splash.png'), fit: BoxFit.cover)),
+                    image: AssetImage('assets/splash.png'), fit: BoxFit.fill)),
           ),
           Center(
               child: CustomText(

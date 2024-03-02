@@ -1,4 +1,4 @@
-import 'package:dairy_app/views/screens/User_signup_screen.dart';
+import 'package:dairy_app/views/screens/user_screens/user_signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 

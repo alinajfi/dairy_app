@@ -1,6 +1,4 @@
-import 'package:dairy_app/utils/constants/grid_item.dart';
-import 'package:dairy_app/views/widgets/custom_text.dart';
-import 'package:dairy_app/views/widgets/reuseable_searchFeild.dart';
+import 'package:dairy_app/data/models/grid_item.dart';
 import 'package:dairy_app/views/widgets/reuseable_sizedBox.dart';
 import 'package:flutter/material.dart';
 

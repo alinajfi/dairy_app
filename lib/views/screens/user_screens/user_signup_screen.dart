@@ -5,10 +5,12 @@ import 'package:dairy_app/views/widgets/reuseable_sizedBox.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
+class UserSignupScreen extends StatelessWidget {
+  UserSignupScreen({super.key});
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
   String gotData = "";
 
 // ignore: camel_case_types
@@ -19,29 +21,28 @@ class LoginPage extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.only(right: 10, left: 10),
+        padding: const EdgeInsets.only(left: 10, right: 10),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomText(
-              text: 'Hello!',
+              text: 'Welcome!',
               color: Colors.black,
               size: screenHeight * 0.05,
               FontWeight: FontWeight.bold,
             ),
             CustomText(
-              text: 'Welcome back',
+              text: 'Create an account',
               color: Colors.black,
               size: screenHeight * 0.04,
             ),
-            ReusableSizedBox(height: screenHeight * 0.020),
             CustomText(
-              text: '    Email Adress',
+              text: '      Email Adress',
               color: Colors.black,
               size: screenHeight * 0.03,
             ),
-            reuseableFormfeild(
+            ReuseableFormfeild(
                 hintText: 'Enter Your Email',
                 icon: Icons.mail,
                 controller: emailController),
@@ -50,11 +51,31 @@ class LoginPage extends StatelessWidget {
               color: Colors.black,
               size: screenHeight * 0.03,
             ),
-            reuseableFormfeild(
+            ReuseableFormfeild(
               hintText: 'Enter Your Password',
               icon: Icons.key,
               controller: passwordController,
               obscureText: true,
+            ),
+            CustomText(
+              text: '    Your Name',
+              color: Colors.black,
+              size: screenHeight * 0.03,
+            ),
+            ReuseableFormfeild(
+              hintText: 'Enter Your Name',
+              icon: Icons.person,
+              controller: nameController,
+            ),
+            CustomText(
+              text: '    Phone Number',
+              color: Colors.black,
+              size: screenHeight * 0.03,
+            ),
+            ReuseableFormfeild(
+              hintText: 'Enter Phone No',
+              icon: Icons.phone,
+              controller: phoneController,
             ),
             ReusableSizedBox(height: screenHeight * 0.010),
             Center(
@@ -70,16 +91,8 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             Center(
-              child: TextButton(
-                onPressed: () {},
-                child: const Text('Forget my passowrd',
-                    style: TextStyle(color: Colors.purple)),
-              ),
-            ),
-            ReusableSizedBox(height: screenHeight * 0.12),
-            Center(
                 child: CustomText(
-              text: 'Or Log In with',
+              text: 'Or Sign Up with',
               color: Colors.black,
               FontWeight: FontWeight.bold,
               size: screenHeight * 0.020,

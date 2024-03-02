@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class reuseableFormfeild extends StatelessWidget {
+class ReuseableFormfeild extends StatelessWidget {
   final String hintText;
   final IconData icon;
   final bool obscureText;
   final IconData? suffixIcon;
   final TextEditingController controller;
 
-  const reuseableFormfeild({
+  const ReuseableFormfeild({
     Key? key,
     required this.hintText,
     required this.icon,

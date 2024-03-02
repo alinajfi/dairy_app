@@ -5,11 +5,11 @@ import 'package:dairy_app/views/widgets/reuseable_sizedBox.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class UserSignupScreen extends StatelessWidget {
-  UserSignupScreen({super.key});
+class VendorSignupScreen extends StatelessWidget {
+  VendorSignupScreen({super.key});
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController nameController = TextEditingController();
+  final TextEditingController businessController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
   String gotData = "";
 
@@ -21,7 +21,7 @@ class UserSignupScreen extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.only(left: 10, right: 10),
+        padding: const EdgeInsets.only(right: 10, left: 10),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,12 +37,17 @@ class UserSignupScreen extends StatelessWidget {
               color: Colors.black,
               size: screenHeight * 0.04,
             ),
+            Center(
+              child: CircleAvatar(
+                radius: screenHeight * 0.06,
+              ),
+            ),
             CustomText(
               text: '      Email Adress',
               color: Colors.black,
               size: screenHeight * 0.03,
             ),
-            reuseableFormfeild(
+            ReuseableFormfeild(
                 hintText: 'Enter Your Email',
                 icon: Icons.mail,
                 controller: emailController),
@@ -51,31 +56,31 @@ class UserSignupScreen extends StatelessWidget {
               color: Colors.black,
               size: screenHeight * 0.03,
             ),
-            reuseableFormfeild(
+            ReuseableFormfeild(
               hintText: 'Enter Your Password',
               icon: Icons.key,
               controller: passwordController,
               obscureText: true,
             ),
             CustomText(
-              text: '    Your Name',
-              color: Colors.black,
-              size: screenHeight * 0.03,
-            ),
-            reuseableFormfeild(
-              hintText: 'Enter Your Name',
-              icon: Icons.person,
-              controller: nameController,
-            ),
-            CustomText(
               text: '    Phone Number',
               color: Colors.black,
               size: screenHeight * 0.03,
             ),
-            reuseableFormfeild(
+            ReuseableFormfeild(
               hintText: 'Enter Phone No',
               icon: Icons.phone,
               controller: phoneController,
+            ),
+            CustomText(
+              text: '    Business Name',
+              color: Colors.black,
+              size: screenHeight * 0.03,
+            ),
+            ReuseableFormfeild(
+              hintText: 'Enter Business Name',
+              icon: Icons.person,
+              controller: businessController,
             ),
             ReusableSizedBox(height: screenHeight * 0.010),
             Center(
