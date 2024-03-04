@@ -1,10 +1,13 @@
-import 'package:dairy_app/data/models/grid_item.dart';
+import 'package:dairy_app/views/widgets/custom_text.dart';
 import 'package:dairy_app/views/widgets/reuseable_sizedBox.dart';
 import 'package:flutter/material.dart';
+
+import '../../data/models/grid_item.dart';
 
 // ignore: must_be_immutable
 class UserHomePage extends StatelessWidget {
   UserHomePage({super.key});
+
   final List<GridItem> gridItems = [
     GridItem(imagePath: 'assets/circle_cow1.png', text: 'Malik Dairy'),
     GridItem(imagePath: 'assets/circle_cow.png', text: 'ali Dairy'),
@@ -88,8 +91,11 @@ class UserHomePage extends StatelessWidget {
             ),
           ),
           ReusableSizedBox(height: screenHeight * 0.010),
-          Flexible(
+          SizedBox(
+            height: screenHeight / 7,
+            width: screenWidth,
             child: ListView.builder(
+              shrinkWrap: true,
               itemCount: gridItems.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
@@ -100,7 +106,7 @@ class UserHomePage extends StatelessWidget {
                     height: screenHeight * 0.07,
                     width: screenWidth * 0.15,
                     decoration: const BoxDecoration(
-                      color: Colors.purpleAccent,
+                      color: Colors.white,
                     ),
                     child: Center(
                         child: Align(
@@ -117,7 +123,7 @@ class UserHomePage extends StatelessWidget {
                             gridItem.text,
                             //    gridItem[index],
                             style: const TextStyle(
-                              color: Colors.white,
+                              color: Color(0xFF000000),
                               fontSize: 12,
                             ),
                           ),
@@ -147,7 +153,7 @@ class UserHomePage extends StatelessWidget {
           Flexible(
             child: GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 4,
+                crossAxisCount: 3,
                 childAspectRatio: 1.0,
               ),
               itemCount: gridItems.length,
@@ -159,30 +165,42 @@ class UserHomePage extends StatelessWidget {
                     height: screenHeight * 0.07,
                     width: screenWidth * 0.15,
                     decoration: const BoxDecoration(
-                      color: Colors.indigo,
+                      color: Colors.white,
                     ),
-                    child: Center(
-                        child: Align(
-                      alignment: Alignment.topCenter,
-                      child: Row(
-                        children: [
-                          Image.asset(
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          height: screenHeight * 0.90,
+                          width: screenWidth * 0.09,
+                          child: Image.asset(
                             gridItem.imagePath,
-                            height: screenHeight * 0.05,
-                            width: screenHeight * 0.05,
+                            fit: BoxFit.fill,
                           ),
-                          SizedBox(height: screenHeight * 0.01),
-                          Text(
-                            gridItem.text,
-                            //    gridItem[index],
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                            ),
+                        ),
+                        SizedBox(height: screenHeight * 0.01),
+                        Padding(
+                          padding: EdgeInsets.only(top: screenHeight * 0.050),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Text(
+                                gridItem.text,
+                                //    gridItem[index],
+                                style: const TextStyle(
+                                  color: Color(0xFF000000),
+                                  fontSize: 15,
+                                ),
+                              ),
+                              const CustomText(
+                                text: 'Details',
+                                color: Color(0xFF000000),
+                                size: 15,
+                              )
+                            ],
                           ),
-                        ],
-                      ),
-                    )),
+                        ),
+                      ],
+                    ),
                   ),
                 );
               },
