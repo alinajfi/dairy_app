@@ -1,3 +1,4 @@
+import 'package:dairy_app/views/screens/Login_page.dart';
 import 'package:dairy_app/views/widgets/app_button.dart';
 import 'package:dairy_app/views/widgets/custom_text.dart';
 import 'package:dairy_app/views/widgets/reuseable_formfeild.dart';
@@ -130,7 +131,13 @@ class VendorSignupScreen extends StatelessWidget {
                 ),
                 Flexible(
                   child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => LoginPageVendor()),
+                        );
+                      },
                       child: const Text(
                         'Log in',
                         style: TextStyle(color: Colors.purple),

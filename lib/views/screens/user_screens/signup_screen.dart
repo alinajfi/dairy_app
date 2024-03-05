@@ -1,3 +1,5 @@
+import 'package:dairy_app/views/screens/user_screens/user_login_signup.dart';
+import 'package:dairy_app/views/screens/vendor_screens/vendor_login_signup.dart';
 import 'package:dairy_app/views/widgets/custom_text.dart';
 import 'package:dairy_app/views/widgets/reuseable_sizedBox.dart';
 import 'package:flutter/material.dart';
@@ -37,9 +39,17 @@ class SignupScreen extends StatelessWidget {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      CircleAvatar(
+                      GestureDetector(
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const UserLoginSignup()),
+                        ),
+                        child: CircleAvatar(
                           radius: screenHeight * 0.15,
-                          backgroundImage: const AssetImage('assets/user.png')),
+                          backgroundImage: const AssetImage('assets/user.png'),
+                        ),
+                      ),
                       ReusableSizedBox(height: screenHeight * 0.020),
                       const CustomText(
                         text: 'User',
@@ -51,10 +61,18 @@ class SignupScreen extends StatelessWidget {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      CircleAvatar(
-                          radius: screenHeight * 0.15,
-                          backgroundImage:
-                              const AssetImage('assets/vendor.png')),
+                      GestureDetector(
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const VendorLoginSignupScreen()),
+                        ),
+                        child: CircleAvatar(
+                            radius: screenHeight * 0.15,
+                            backgroundImage:
+                                const AssetImage('assets/vendor.png')),
+                      ),
                       ReusableSizedBox(height: screenHeight * 0.020),
                       const CustomText(
                         text: 'Vendor',

@@ -1,3 +1,5 @@
+import 'package:dairy_app/views/screens/Login_page.dart';
+import 'package:dairy_app/views/screens/vendor_screens/Vendor_signup_screen.dart';
 import 'package:dairy_app/views/widgets/app_button.dart';
 import 'package:dairy_app/views/widgets/custom_text.dart';
 import 'package:dairy_app/views/widgets/reuseable_sizedBox.dart';
@@ -30,7 +32,12 @@ class VendorLoginSignupScreen extends StatelessWidget {
               text: 'Log in',
               height: screenHeight * 0.090,
               width: screenWidth * 0.70,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPageVendor()),
+                );
+              },
               backgroundColor: const Color(0xFF332749),
               textColor: Colors.white,
               borderRadius: 20.0,
@@ -41,7 +48,12 @@ class VendorLoginSignupScreen extends StatelessWidget {
               text: 'Sign Up',
               height: screenHeight * 0.090,
               width: screenWidth * 0.70,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => VendorSignupScreen()),
+                );
+              },
               backgroundColor: Colors.white70,
               textColor: const Color(0xFF332749),
               borderRadius: 20.0,

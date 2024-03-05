@@ -1,3 +1,4 @@
+import 'package:dairy_app/views/screens/user_screens/user_signup_screen.dart';
 import 'package:dairy_app/views/widgets/app_button.dart';
 import 'package:dairy_app/views/widgets/custom_text.dart';
 import 'package:dairy_app/views/widgets/reuseable_formfeild.dart';
@@ -60,7 +61,7 @@ class LoginPage extends StatelessWidget {
               ReusableSizedBox(height: screenHeight * 0.010),
               Center(
                 child: AppButton(
-                  text: 'Sign Up',
+                  text: 'Log In',
                   height: screenHeight * 0.090,
                   width: screenWidth * 0.70,
                   onPressed: () {},
@@ -113,9 +114,15 @@ class LoginPage extends StatelessWidget {
                   ),
                   Flexible(
                     child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => UserSignupScreen()),
+                          );
+                        },
                         child: const Text(
-                          'Log in',
+                          'Sign Up',
                           style: TextStyle(color: Colors.purple),
                         )),
                   )

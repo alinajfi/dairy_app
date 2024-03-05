@@ -1,3 +1,4 @@
+import 'package:dairy_app/views/screens/vendor_screens/Vendor_signup_screen.dart';
 import 'package:dairy_app/views/widgets/app_button.dart';
 import 'package:dairy_app/views/widgets/custom_text.dart';
 import 'package:dairy_app/views/widgets/reuseable_formfeild.dart';
@@ -5,8 +6,8 @@ import 'package:dairy_app/views/widgets/reuseable_sizedBox.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
+class LoginPageVendor extends StatelessWidget {
+  LoginPageVendor({super.key});
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   String gotData = "";
@@ -112,7 +113,13 @@ class LoginPage extends StatelessWidget {
                 ),
                 Flexible(
                   child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => VendorSignupScreen()),
+                        );
+                      },
                       child: const Text(
                         'Sign Up',
                         style: TextStyle(color: Colors.purple),
