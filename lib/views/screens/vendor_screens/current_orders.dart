@@ -25,7 +25,23 @@ class CurrentOrders extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ReusableSizedBox(height: screenHeight * 0.15),
+            Container(
+              height: screenHeight * 0.15,
+              width: screenWidth,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+              ),
+              child: Row(
+                children: [
+                  ReusableSizedBox(
+                    height: screenHeight * 0.15,
+                    width: screenWidth * 0.50,
+                  ),
+                  const Spacer(),
+                  const CircleAvatar(),
+                ],
+              ),
+            ),
             CustomText(
               text: 'Current Orders',
               color: AppColors.black,
