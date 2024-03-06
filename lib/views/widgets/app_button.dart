@@ -9,6 +9,7 @@ class AppButton extends StatelessWidget {
   final double? height;
   final double borderRadius;
   final double fontSize;
+  final IconData? icon;
 
   const AppButton({
     Key? key,
@@ -20,6 +21,7 @@ class AppButton extends StatelessWidget {
     this.height,
     this.borderRadius = 8.0,
     this.fontSize = 16.0,
+    this.icon,
   }) : super(key: key);
 
   @override
@@ -35,12 +37,19 @@ class AppButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(borderRadius),
           ),
         ),
-        child: Text(
-          text,
-          style: TextStyle(
-            color: textColor,
-            fontSize: fontSize,
-          ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(icon),
+            SizedBox(width: icon != null ? 8.0 : 0.0),
+            Text(
+              text,
+              style: TextStyle(
+                color: textColor,
+                fontSize: fontSize,
+              ),
+            ),
+          ],
         ),
       ),
     );

@@ -7,7 +7,9 @@ import 'package:dairy_app/views/screens/user_screens/shop_list.dart';
 import 'package:dairy_app/views/screens/user_screens/Login_page.dart';
 import 'package:dairy_app/views/screens/user_screens/signup_screen.dart';
 import 'package:dairy_app/views/screens/user_screens/vendor_Profile_details.dart';
+import 'package:dairy_app/views/screens/vendor_screens/current_orders.dart';
 import 'package:dairy_app/views/screens/vendor_screens/product_list.dart';
+import 'package:dairy_app/views/screens/vendor_screens/upload_product.dart';
 import 'package:dairy_app/views/screens/vendor_screens/vendor_first_page.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const ProductList(),
+      home: const CurrentOrders(),
     );
   }
 }
