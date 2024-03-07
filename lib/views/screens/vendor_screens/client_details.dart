@@ -1,5 +1,6 @@
 import 'package:dairy_app/data/models/grid_item.dart';
 import 'package:dairy_app/utils/constants/colour_contants.dart';
+import 'package:dairy_app/views/screens/vendor_screens/order_accepted.dart';
 import 'package:dairy_app/views/widgets/app_button.dart';
 import 'package:dairy_app/views/widgets/custom_text.dart';
 import 'package:dairy_app/views/widgets/reuseable_sizedBox.dart';
@@ -184,7 +185,12 @@ class ClientDetails extends StatelessWidget {
             Center(
               child: AppButton(
                 text: 'Accept Client',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const OrderAccepted()));
+                },
                 backgroundColor: AppColors.purple,
                 textColor: Colors.white,
                 borderRadius: 20,

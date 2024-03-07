@@ -1,4 +1,5 @@
 import 'package:dairy_app/utils/constants/colour_contants.dart';
+import 'package:dairy_app/views/screens/vendor_screens/client_details.dart';
 import 'package:dairy_app/views/widgets/app_button.dart';
 import 'package:dairy_app/views/widgets/custom_text.dart';
 import 'package:dairy_app/views/widgets/reuseable_sizedBox.dart';
@@ -97,7 +98,13 @@ class CurrentOrders extends StatelessWidget {
                               children: [
                                 AppButton(
                                   text: 'Accept',
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                ClientDetails()));
+                                  },
                                   backgroundColor: AppColors.purple,
                                   textColor: Colors.white,
                                 ),

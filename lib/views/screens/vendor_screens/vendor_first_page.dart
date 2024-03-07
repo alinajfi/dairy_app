@@ -1,4 +1,6 @@
 import 'package:dairy_app/utils/constants/colour_contants.dart';
+import 'package:dairy_app/views/screens/vendor_screens/current_orders.dart';
+import 'package:dairy_app/views/screens/vendor_screens/product_list.dart';
 import 'package:dairy_app/views/widgets/app_button.dart';
 import 'package:dairy_app/views/widgets/custom_text.dart';
 import 'package:dairy_app/views/widgets/reuseable_sizedBox.dart';
@@ -67,7 +69,13 @@ class VendorFirstPage extends StatelessWidget {
                             ),
                             const Spacer(),
                             IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const ProductList()));
+                                },
                                 icon: const Icon(
                                     Icons.arrow_circle_right_outlined))
                           ],
@@ -84,7 +92,12 @@ class VendorFirstPage extends StatelessWidget {
                 text: "Booking Requests!",
                 backgroundColor: Colors.limeAccent,
                 textColor: AppColors.black,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const CurrentOrders()));
+                },
                 height: screenHeight * 0.080,
                 width: screenWidth * 0.60,
                 borderRadius: 40,

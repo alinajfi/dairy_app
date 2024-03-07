@@ -49,21 +49,24 @@ class ShopList extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed, // Ensures all buttons are visible
-        items: const [
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: GestureDetector(onTap: () {}, child: const Icon(Icons.home)),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.add_business_outlined),
-            label: 'Vendor',
+            icon: GestureDetector(
+                onTap: () {}, child: const Icon(Icons.add_business_outlined)),
+            label: 'Shop',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
+            icon: GestureDetector(
+                onTap: () {}, child: const Icon(Icons.favorite)),
             label: 'Favorites',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
+            icon:
+                GestureDetector(onTap: () {}, child: const Icon(Icons.person)),
             label: 'Profile',
           ),
         ],

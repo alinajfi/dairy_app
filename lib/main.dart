@@ -1,6 +1,8 @@
 import 'package:dairy_app/views/screens/Splash_Screen.dart';
 import 'package:dairy_app/views/screens/user_homePage.dart';
 import 'package:dairy_app/views/screens/user_screens/checkout_page.dart';
+import 'package:dairy_app/views/screens/user_screens/dummy_Screen1.dart';
+import 'package:dairy_app/views/screens/user_screens/dummy_screen2.dart';
 import 'package:dairy_app/views/screens/user_screens/order_details_page.dart';
 import 'package:dairy_app/views/screens/user_screens/order_placed_successfully.dart';
 import 'package:dairy_app/views/screens/user_screens/shop_list.dart';
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const OrderAccepted(),
+      home: UserHomePage(),
     );
   }
 }

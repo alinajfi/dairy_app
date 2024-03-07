@@ -1,4 +1,5 @@
 import 'package:dairy_app/utils/constants/colour_contants.dart';
+import 'package:dairy_app/views/screens/vendor_screens/upload_product.dart';
 import 'package:dairy_app/views/widgets/custom_text.dart';
 import 'package:dairy_app/views/widgets/reuseable_sizedBox.dart';
 import 'package:flutter/material.dart';
@@ -65,7 +66,12 @@ class ProductList extends StatelessWidget {
                           ),
                           const Spacer(),
                           IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => UploadProduct()));
+                              },
                               icon:
                                   const Icon(Icons.arrow_circle_right_outlined))
                         ],
