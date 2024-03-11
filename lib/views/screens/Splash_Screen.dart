@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+  static const routeName = '/splashScreen';
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -18,12 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(
       const Duration(seconds: 1),
-      () => Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-            builder: (context) =>
-                OnboardingScreen()), // Replace HomeScreen with your desired screen
-      ),
+      () => Navigator.pushReplacementNamed(context, OnboardingScreen.routeName),
     );
   }
 
@@ -39,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 image: DecorationImage(
                     image: AssetImage('assets/splash.png'), fit: BoxFit.fill)),
           ),
-          Center(
+          const Center(
               child: CustomText(
             text: "Dairy App",
             color: AppColors.purple,

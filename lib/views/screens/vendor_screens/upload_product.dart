@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dairy_app/utils/constants/colour_contants.dart';
 import 'package:dairy_app/views/widgets/app_button.dart';
 import 'package:dairy_app/views/widgets/custom_text.dart';
@@ -29,7 +30,7 @@ class UploadProduct extends StatelessWidget {
                 child: CustomText(
                   text: 'Selected Item',
                   color: AppColors.black,
-                  FontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.bold,
                   size: 25,
                 ),
               ),
@@ -39,14 +40,14 @@ class UploadProduct extends StatelessWidget {
               text: 'How much do you want to charge',
               color: AppColors.black,
               size: 18,
-              FontWeight: FontWeight.bold,
+              fontWeight: FontWeight.bold,
             ),
             ReusableSizedBox(height: screenHeight * 0.030),
             CustomText(
               text: 'Enter product Price In Rupees',
               color: AppColors.black,
               size: 19,
-              FontWeight: FontWeight.bold,
+              fontWeight: FontWeight.bold,
             ),
             ReusableSizedBox(height: screenHeight * 0.010),
             CustomText(
@@ -72,7 +73,7 @@ class UploadProduct extends StatelessWidget {
               text: "Upload Picture's here",
               color: AppColors.black,
               size: 20,
-              FontWeight: FontWeight.bold,
+              fontWeight: FontWeight.bold,
             ),
             ReusableSizedBox(height: screenHeight * 0.050),
             Flexible(
@@ -82,8 +83,13 @@ class UploadProduct extends StatelessWidget {
                   text: "Upload Image(s)",
                   backgroundColor: AppColors.purple,
                   textColor: Colors.white,
-                  onPressed: () {},
-                  height: screenHeight * 0.10,
+                  onPressed: () {
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      content: Text("Upload Successfull"),
+                      duration: Duration(seconds: 3),
+                    ));
+                  },
+                  height: screenHeight * 0.08,
                   width: screenWidth * 0.85,
                   borderRadius: 18,
                 ),
@@ -93,12 +99,14 @@ class UploadProduct extends StatelessWidget {
             Flexible(
               child: Center(
                 child: AppButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
                   text: 'Submit',
                   backgroundColor: AppColors.purple,
                   textColor: Colors.white,
                   borderRadius: 18,
-                  height: screenHeight * 0.10,
+                  height: screenHeight * 0.08,
                   width: screenWidth * 0.55,
                 ),
               ),

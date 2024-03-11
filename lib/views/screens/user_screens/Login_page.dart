@@ -1,3 +1,4 @@
+import 'package:dairy_app/views/screens/user_homePage.dart';
 import 'package:dairy_app/views/screens/user_screens/user_signup_screen.dart';
 import 'package:dairy_app/views/widgets/app_button.dart';
 import 'package:dairy_app/views/widgets/custom_text.dart';
@@ -5,14 +6,17 @@ import 'package:dairy_app/views/widgets/reuseable_formfeild.dart';
 import 'package:dairy_app/views/widgets/reuseable_sizedBox.dart';
 import 'package:flutter/material.dart';
 
+import '../vendor_screens/vendor_first_page.dart';
+
 // ignore: must_be_immutable
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
+
+  static const String routeName = '/loginPage';
+
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   String gotData = "";
-
-// ignore: camel_case_types
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +34,7 @@ class LoginPage extends StatelessWidget {
                 text: 'Hello!',
                 color: Colors.black,
                 size: screenHeight * 0.05,
-                FontWeight: FontWeight.bold,
+                fontWeight: FontWeight.bold,
               ),
               CustomText(
                 text: 'Welcome back',
@@ -64,7 +68,11 @@ class LoginPage extends StatelessWidget {
                   text: 'Log In',
                   height: screenHeight * 0.090,
                   width: screenWidth * 0.70,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => UserHomePage(),
+                    ));
+                  },
                   backgroundColor: const Color(0xFF332749),
                   textColor: Colors.white70,
                   borderRadius: 20.0,
@@ -83,7 +91,7 @@ class LoginPage extends StatelessWidget {
                   child: CustomText(
                 text: 'Or Log In with',
                 color: Colors.black,
-                FontWeight: FontWeight.bold,
+                fontWeight: FontWeight.bold,
                 size: screenHeight * 0.020,
               )),
               Row(
@@ -109,7 +117,7 @@ class LoginPage extends StatelessWidget {
                   CustomText(
                     text: 'Already have an account?',
                     color: Colors.black,
-                    FontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.bold,
                     size: screenHeight * 0.020,
                   ),
                   Flexible(

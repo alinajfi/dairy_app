@@ -1,6 +1,8 @@
 import 'package:dairy_app/utils/constants/colour_contants.dart';
 import 'package:dairy_app/views/screens/vendor_screens/client_details.dart';
 import 'package:dairy_app/views/widgets/app_button.dart';
+import 'package:dairy_app/views/widgets/circluar_imageview.dart';
+import 'package:dairy_app/views/widgets/custom_btn.dart';
 import 'package:dairy_app/views/widgets/custom_text.dart';
 import 'package:dairy_app/views/widgets/reuseable_sizedBox.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +41,10 @@ class CurrentOrders extends StatelessWidget {
                     width: screenWidth * 0.50,
                   ),
                   const Spacer(),
-                  const CircleAvatar(),
+                  CircluarImageView(
+                      imageUrl: "assets/vendor.png",
+                      height: screenHeight * 0.060,
+                      width: screenHeight * 0.060),
                 ],
               ),
             ),
@@ -47,14 +52,19 @@ class CurrentOrders extends StatelessWidget {
               text: 'Current Orders',
               color: AppColors.black,
               size: 20,
-              FontWeight: FontWeight.bold,
+              fontWeight: FontWeight.bold,
             ),
             ReusableSizedBox(height: screenHeight * 0.025),
             Container(
+              clipBehavior: Clip.hardEdge,
               height: screenHeight * 0.30,
               width: screenWidth,
               decoration: BoxDecoration(
                 color: AppColors.lightPurple,
+              ),
+              child: Image.asset(
+                "assets/google_map.png",
+                fit: BoxFit.fill,
               ),
             ),
             ReusableSizedBox(height: screenHeight * 0.025),
@@ -62,66 +72,100 @@ class CurrentOrders extends StatelessWidget {
               text: 'Chose your clients here',
               color: AppColors.black,
               size: 20,
-              FontWeight: FontWeight.bold,
+              fontWeight: FontWeight.bold,
             ),
             ReusableSizedBox(height: screenHeight * 0.018),
             Expanded(
               child: ListView.builder(
-                  itemCount: clientList.length,
-                  scrollDirection: Axis.vertical,
-                  itemBuilder: (context, index) {
-                    int itemNum = index + 1;
-                    clientList.length;
-                    return Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Container(
-                        height: screenHeight * 0.15,
-                        width: screenWidth,
-                        decoration: const BoxDecoration(color: Colors.white),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Column(
-                              children: [
-                                CustomText(
-                                  text: '$itemNum.' '${clientList[index]}',
+                itemCount: clientList.length,
+                scrollDirection: Axis.vertical,
+                itemBuilder: (context, index) {
+                  int itemNum = index + 1;
+                  clientList.length;
+                  return Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Container(
+                      height: screenHeight * 0.12,
+                      width: screenWidth,
+                      decoration: const BoxDecoration(color: Colors.white),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              CustomText(
+                                text: '$itemNum.' '${clientList[index]}',
+                                color: AppColors.black,
+                                size: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              Flexible(
+                                child: CustomText(
+                                  text: 'Scheme# 33, Main Super Highway',
                                   color: AppColors.black,
-                                  size: 20,
-                                  FontWeight: FontWeight.bold,
+                                  maxLines: 2,
                                 ),
-                                CustomText(
-                                    text: 'Adress', color: AppColors.black)
-                              ],
-                            ),
-                            const Spacer(),
-                            Column(
-                              children: [
-                                AppButton(
-                                  text: 'Accept',
-                                  onPressed: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                ClientDetails()));
-                                  },
-                                  backgroundColor: AppColors.purple,
-                                  textColor: Colors.white,
-                                ),
-                                ReusableSizedBox(height: screenHeight * 0.010),
-                                AppButton(
-                                  text: 'Decline',
-                                  onPressed: () {},
-                                  backgroundColor: AppColors.purple,
-                                  textColor: Colors.white,
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
+                              )
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              CustomButton(
+                                text: "Accept",
+                                width: screenWidth * 0.20,
+                                height: screenHeight * 0.030,
+                                bgColor: AppColors.purple,
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => ClientDetails(),
+                                    ),
+                                  );
+                                },
+                              ),
+                              // AppButton(
+                              //   fontSize: screenHeight * 0.025,
+                              //   height: screenHeight * 0.050, // Adjusted size
+                              //   width: screenHeight * 0.060, // Adjusted size
+                              //   text: '',
+                              //   onPressed: () {
+                              //     Navigator.push(
+                              //       context,
+                              //       MaterialPageRoute(
+                              //         builder: (context) => ClientDetails(),
+                              //       ),
+                              //     );
+                              //   },
+                              //   backgroundColor: AppColors.purple,
+                              //   textColor: Colors.white,
+                              // ),
+                              SizedBox(
+                                  height: screenHeight *
+                                      0.010), // Added SizedBox for spacing
+                              // AppButton(
+                              //   height: screenHeight * 0.060, // Adjusted size
+                              //   width: screenHeight * 0.060, // Adjusted size
+                              //   text: '',
+                              //   onPressed: () {},
+                              //   backgroundColor: AppColors.purple,
+                              //   textColor: Colors.white,
+                              // ),
+                              CustomButton(
+                                  width: screenWidth * 0.20,
+                                  height: screenHeight * 0.030,
+                                  text: "Decline",
+                                  bgColor: AppColors.purple),
+                            ],
+                          )
+                        ],
                       ),
-                    );
-                  }),
+                    ),
+                  );
+                },
+              ),
             ),
           ],
         ),

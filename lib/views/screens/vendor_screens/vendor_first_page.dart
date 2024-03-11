@@ -6,8 +6,9 @@ import 'package:dairy_app/views/widgets/custom_text.dart';
 import 'package:dairy_app/views/widgets/reuseable_sizedBox.dart';
 import 'package:flutter/material.dart';
 
-class VendorFirstPage extends StatelessWidget {
-  const VendorFirstPage({super.key});
+class VenodrHomePage extends StatelessWidget {
+  const VenodrHomePage({super.key});
+  static const String routeName = '/vendorHomePage';
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class VendorFirstPage extends StatelessWidget {
               text: 'Welcome back\nABC',
               color: AppColors.black,
               size: 25,
-              FontWeight: FontWeight.bold,
+              fontWeight: FontWeight.bold,
             ),
             ReusableSizedBox(height: screenHeight * 0.020),
             CustomText(
@@ -65,7 +66,7 @@ class VendorFirstPage extends StatelessWidget {
                               text: 'List your products',
                               color: AppColors.black,
                               size: 20,
-                              FontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.bold,
                             ),
                             const Spacer(),
                             IconButton(

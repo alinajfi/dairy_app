@@ -34,7 +34,7 @@ class ProductList extends StatelessWidget {
                 CustomText(
                   text: 'Products',
                   color: AppColors.black,
-                  FontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.bold,
                   size: 20,
                 ),
                 CustomText(
@@ -53,15 +53,20 @@ class ProductList extends StatelessWidget {
                 itemBuilder: (context, index) {
                   namesList.length;
                   return Padding(
-                    padding: const EdgeInsets.all(20.0),
+                    padding: const EdgeInsets.all(10.0),
                     child: Container(
+                      padding: const EdgeInsets.all(10.0),
                       height: screenHeight * 0.080,
                       width: screenWidth,
-                      decoration: const BoxDecoration(color: Colors.white),
+                      decoration: BoxDecoration(
+                          color: AppColors.lightGrey,
+                          borderRadius:
+                              BorderRadius.circular(screenHeight * 0.015)),
                       child: Row(
                         children: [
                           CustomText(
                             text: namesList[index],
+                            size: screenHeight * 0.020,
                             color: AppColors.black,
                           ),
                           const Spacer(),

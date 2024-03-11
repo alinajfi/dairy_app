@@ -1,4 +1,6 @@
+import 'package:dairy_app/views/screens/user_screens/order_details_page.dart';
 import 'package:dairy_app/views/widgets/app_button.dart';
+import 'package:dairy_app/views/widgets/circluar_imageview.dart';
 import 'package:dairy_app/views/widgets/custom_text.dart';
 import 'package:dairy_app/views/widgets/reuseable_sizedBox.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +9,9 @@ import '../../../data/models/grid_item.dart';
 
 class VendorProfileDetails extends StatelessWidget {
   VendorProfileDetails({super.key});
+
+  static const String routeName = '/vendorProfileDetails';
+
   final List<GridItem> gridItems = [
     GridItem(imagePath: 'assets/circle_cow1.png', text: 'Malik Dairy'),
     GridItem(imagePath: 'assets/circle_cow.png', text: 'ali Dairy'),
@@ -47,19 +52,23 @@ class VendorProfileDetails extends StatelessWidget {
               child: Container(
                 height: screenHeight * 0.20,
                 alignment: Alignment.bottomLeft,
-                child: CircleAvatar(
-                  radius: screenHeight * 0.08,
-                ),
+                child: CircluarImageView(
+                    imageUrl: 'assets/vendor.png',
+                    height: screenHeight * 0.15,
+                    width: screenHeight * 0.15),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(
-                  top: screenHeight * 0.21, left: screenWidth * 0.30),
-              child: const CustomText(
-                text: 'Vendor Name',
-                color: Color(0xFF000000),
-                FontWeight: FontWeight.bold,
-                size: 25,
+            Positioned(
+              left: 10,
+              child: Padding(
+                padding: EdgeInsets.only(
+                    top: screenHeight * 0.21, left: screenWidth * 0.30),
+                child: const CustomText(
+                  text: 'Malik Dairy Shop',
+                  color: Color(0xFF000000),
+                  fontWeight: FontWeight.bold,
+                  size: 25,
+                ),
               ),
             ),
             Padding(
@@ -75,7 +84,7 @@ class VendorProfileDetails extends StatelessWidget {
           const CustomText(
             text: 'Service Offered',
             color: Color(0xFF000000),
-            FontWeight: FontWeight.bold,
+            fontWeight: FontWeight.bold,
             size: 25,
           ),
           ReusableSizedBox(height: screenHeight * 0.010),
@@ -198,7 +207,11 @@ class VendorProfileDetails extends StatelessWidget {
               text: 'Order Now',
               height: screenHeight * 0.060,
               width: screenWidth * 0.60,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => OrderDetailsPage(),
+                ));
+              },
               backgroundColor: const Color(0xFF332749),
               textColor: Colors.white,
               borderRadius: 12.0,

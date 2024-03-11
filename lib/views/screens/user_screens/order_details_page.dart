@@ -1,3 +1,4 @@
+import 'package:dairy_app/views/screens/user_screens/checkout_page.dart';
 import 'package:dairy_app/views/widgets/app_button.dart';
 import 'package:dairy_app/views/widgets/custom_text.dart';
 import 'package:dairy_app/views/widgets/reuseable_sizedBox.dart';
@@ -6,6 +7,9 @@ import 'package:flutter/rendering.dart';
 
 class OrderDetailsPage extends StatelessWidget {
   OrderDetailsPage({super.key});
+
+  static const String routeName = '/orderDetailsPage';
+
   final List<String> namesList = [
     'Name1 & Price',
     'Name2 & Price',
@@ -29,7 +33,7 @@ class OrderDetailsPage extends StatelessWidget {
             const CustomText(
               text: 'You Chose Vender Name',
               color: Color(0xFF000000),
-              FontWeight: FontWeight.bold,
+              fontWeight: FontWeight.bold,
               size: 25,
             ),
             Row(
@@ -62,7 +66,7 @@ class OrderDetailsPage extends StatelessWidget {
             const CustomText(
               text: 'Vendor Name',
               color: Color(0xFF000000),
-              FontWeight: FontWeight.bold,
+              fontWeight: FontWeight.bold,
               size: 25,
             ),
             const CustomText(
@@ -89,10 +93,14 @@ class OrderDetailsPage extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(left: screenWidth * 0.18),
               child: AppButton(
-                text: 'Order Placed',
+                text: 'Confirm Order',
                 height: screenHeight * 0.060,
                 width: screenWidth * 0.60,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => CheckoutPage(),
+                  ));
+                },
                 backgroundColor: const Color(0xFF332749),
                 textColor: Colors.white,
                 borderRadius: 12.0,

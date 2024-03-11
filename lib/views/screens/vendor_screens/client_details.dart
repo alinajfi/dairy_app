@@ -2,6 +2,7 @@ import 'package:dairy_app/data/models/grid_item.dart';
 import 'package:dairy_app/utils/constants/colour_contants.dart';
 import 'package:dairy_app/views/screens/vendor_screens/order_accepted.dart';
 import 'package:dairy_app/views/widgets/app_button.dart';
+import 'package:dairy_app/views/widgets/circluar_imageview.dart';
 import 'package:dairy_app/views/widgets/custom_text.dart';
 import 'package:dairy_app/views/widgets/reuseable_sizedBox.dart';
 import 'package:flutter/material.dart';
@@ -43,12 +44,13 @@ class ClientDetails extends StatelessWidget {
                     text: 'Client Details',
                     color: AppColors.black,
                     size: 22,
-                    FontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.bold,
                   ),
                   const Spacer(),
-                  const CircleAvatar(
-                    radius: 50,
-                  ),
+                  CircluarImageView(
+                      imageUrl: "assets/vendor.png",
+                      height: screenHeight * 0.20,
+                      width: screenWidth * 0.20)
                 ],
               ),
             ),
@@ -59,7 +61,7 @@ class ClientDetails extends StatelessWidget {
                   CustomText(
                     text: 'Ali najfi',
                     color: AppColors.black,
-                    FontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.bold,
                     size: 25,
                   ),
                   CustomText(
@@ -74,7 +76,7 @@ class ClientDetails extends StatelessWidget {
               text: 'Location:',
               color: AppColors.black,
               size: 20,
-              FontWeight: FontWeight.bold,
+              fontWeight: FontWeight.bold,
             ),
             CustomText(
               text: 'ABC Address',
@@ -86,7 +88,7 @@ class ClientDetails extends StatelessWidget {
               text: 'Product type:',
               color: AppColors.black,
               size: 20,
-              FontWeight: FontWeight.bold,
+              fontWeight: FontWeight.bold,
             ),
             CustomText(
               text: 'Diry',
@@ -103,7 +105,7 @@ class ClientDetails extends StatelessWidget {
               text: "Client's Selection:",
               color: AppColors.black,
               size: 20,
-              FontWeight: FontWeight.bold,
+              fontWeight: FontWeight.bold,
             ),
             Flexible(
               child: GridView.builder(
@@ -130,7 +132,7 @@ class ClientDetails extends StatelessWidget {
                           const Spacer(),
                           Container(
                             height: screenHeight * 0.090,
-                            width: screenWidth * 0.15,
+                            width: screenWidth * 0.25,
                             decoration:
                                 const BoxDecoration(color: Colors.white),
                             child: Column(
@@ -138,7 +140,6 @@ class ClientDetails extends StatelessWidget {
                               children: [
                                 Text(
                                   gridItem.text,
-                                  //    gridItem[index],
                                   style: const TextStyle(
                                       color: Color(0xFF000000),
                                       fontSize: 12,
@@ -148,7 +149,7 @@ class ClientDetails extends StatelessWidget {
                                   text: 'Rs 350',
                                   color: Color(0xFF000000),
                                   size: 15,
-                                  FontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ],
                             ),
@@ -166,7 +167,7 @@ class ClientDetails extends StatelessWidget {
                   text: 'Total Price',
                   color: AppColors.black,
                   size: 20,
-                  FontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.bold,
                 ),
                 const Spacer(),
                 Container(

@@ -7,6 +7,9 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class UserSignupScreen extends StatelessWidget {
   UserSignupScreen({super.key});
+
+  static const routeName = '/userSignUpScreen';
+
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController nameController = TextEditingController();
@@ -30,7 +33,7 @@ class UserSignupScreen extends StatelessWidget {
               text: 'Welcome!',
               color: Colors.black,
               size: screenHeight * 0.05,
-              FontWeight: FontWeight.bold,
+              fontWeight: FontWeight.bold,
             ),
             CustomText(
               text: 'Create an account',
@@ -94,7 +97,7 @@ class UserSignupScreen extends StatelessWidget {
                 child: CustomText(
               text: 'Or Sign Up with',
               color: Colors.black,
-              FontWeight: FontWeight.bold,
+              fontWeight: FontWeight.bold,
               size: screenHeight * 0.020,
             )),
             Row(
@@ -120,7 +123,7 @@ class UserSignupScreen extends StatelessWidget {
                 CustomText(
                   text: 'Already have an account?',
                   color: Colors.black,
-                  FontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.bold,
                   size: screenHeight * 0.020,
                 ),
                 Flexible(

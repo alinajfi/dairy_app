@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 class UserLoginSignup extends StatelessWidget {
   const UserLoginSignup({super.key});
 
+  static const String routeName = '/userLoginSignUp';
+
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -25,7 +27,7 @@ class UserLoginSignup extends StatelessWidget {
               text: 'Get your Dairy Products\n     From Trustworthy',
               color: const Color(0xFF332749),
               size: screenHeight * 0.04,
-              FontWeight: FontWeight.bold,
+              fontWeight: FontWeight.bold,
             ),
             ReusableSizedBox(height: screenHeight * 0.099),
             AppButton(

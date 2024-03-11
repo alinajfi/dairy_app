@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class UserHomePage extends StatelessWidget {
+  static const String routeName = '/userHomePage';
+
   UserHomePage({super.key});
   final List<GridItem> gridItems = [
     GridItem(imagePath: 'assets/circle_cow1.png', text: 'Malik Dairy'),

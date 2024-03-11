@@ -1,30 +1,20 @@
-import 'package:dairy_app/views/screens/Splash_Screen.dart';
-import 'package:dairy_app/views/screens/user_homePage.dart';
-import 'package:dairy_app/views/screens/user_screens/checkout_page.dart';
-import 'package:dairy_app/views/screens/user_screens/dummy_Screen1.dart';
-import 'package:dairy_app/views/screens/user_screens/dummy_screen2.dart';
-import 'package:dairy_app/views/screens/user_screens/order_details_page.dart';
-import 'package:dairy_app/views/screens/user_screens/order_placed_successfully.dart';
-import 'package:dairy_app/views/screens/user_screens/shop_list.dart';
-import 'package:dairy_app/views/screens/user_screens/Login_page.dart';
-import 'package:dairy_app/views/screens/user_screens/signup_screen.dart';
-import 'package:dairy_app/views/screens/user_screens/vendor_Profile_details.dart';
-import 'package:dairy_app/views/screens/vendor_screens/client_details.dart';
-import 'package:dairy_app/views/screens/vendor_screens/current_orders.dart';
-import 'package:dairy_app/views/screens/vendor_screens/order_accepted.dart';
-import 'package:dairy_app/views/screens/vendor_screens/product_list.dart';
-import 'package:dairy_app/views/screens/vendor_screens/upload_product.dart';
-import 'package:dairy_app/views/screens/vendor_screens/vendor_first_page.dart';
+import 'package:dairy_app/firebase_options.dart';
+import 'package:dairy_app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+import 'views/screens/splash_screen.dart';
+
+void main() async {
   runApp(const MyApp());
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -34,7 +24,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: UserHomePage(),
+      home: const SplashScreen(),
+      onGenerateRoute: (settings) => AppRoutes.myRoutes(settings),
     );
   }
 }

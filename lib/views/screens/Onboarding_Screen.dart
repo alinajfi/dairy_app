@@ -4,6 +4,8 @@ import 'package:introduction_screen/introduction_screen.dart';
 
 class OnboardingScreen extends StatelessWidget {
   OnboardingScreen({super.key});
+  static const routeName = '/onBoardingScreen';
+
   final List<PageViewModel> pages = [
     PageViewModel(
         title: 'Fresh',

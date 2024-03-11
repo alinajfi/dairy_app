@@ -16,7 +16,7 @@ class DummyScreen2 extends StatelessWidget {
               text: 'Dummy Screen2',
               color: AppColors.black,
               size: 25,
-              FontWeight: FontWeight.bold,
+              fontWeight: FontWeight.bold,
             )
           ],
         ),

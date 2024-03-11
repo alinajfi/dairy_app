@@ -4,6 +4,9 @@ import 'package:dairy_app/views/widgets/custom_text.dart';
 import 'package:dairy_app/views/widgets/reuseable_sizedBox.dart';
 import 'package:flutter/material.dart';
 
+import '../../widgets/circluar_imageview.dart';
+import 'vendor_first_page.dart';
+
 class OrderAccepted extends StatelessWidget {
   const OrderAccepted({super.key});
 
@@ -23,12 +26,13 @@ class OrderAccepted extends StatelessWidget {
                 decoration: const BoxDecoration(
                   color: Colors.white,
                 ),
-                child: const Row(
+                child: Row(
                   children: [
-                    Spacer(),
-                    CircleAvatar(
-                      radius: 50,
-                    ),
+                    const Spacer(),
+                    CircluarImageView(
+                        imageUrl: "assets/vendor.png",
+                        height: screenHeight * 0.20,
+                        width: screenWidth * 0.20)
                   ],
                 ),
               ),
@@ -49,7 +53,7 @@ class OrderAccepted extends StatelessWidget {
                       text: 'Successful',
                       color: AppColors.black,
                       size: 30,
-                      FontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.bold,
                     ),
                     ReusableSizedBox(height: screenHeight * 0.060),
                     CustomText(
@@ -62,7 +66,7 @@ class OrderAccepted extends StatelessWidget {
                       text: '24 Hours',
                       color: AppColors.black,
                       size: 18,
-                      FontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.bold,
                     ),
                     ReusableSizedBox(height: screenHeight * 0.020),
                     CustomText(
@@ -75,7 +79,13 @@ class OrderAccepted extends StatelessWidget {
                     Center(
                       child: AppButton(
                         text: 'Contact Client',
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).pushNamedAndRemoveUntil(
+                              VenodrHomePage.routeName,
+                              (route) =>
+                                  route.settings.name ==
+                                  VenodrHomePage.routeName);
+                        },
                         backgroundColor: AppColors.purple,
                         textColor: Colors.white,
                         borderRadius: 10,

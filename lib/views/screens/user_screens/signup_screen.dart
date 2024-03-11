@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
 
+  static const String routeName = '/signUpScreen';
+
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -46,7 +48,7 @@ class SignupScreen extends StatelessWidget {
                               builder: (context) => const UserLoginSignup()),
                         ),
                         child: CircleAvatar(
-                          radius: screenHeight * 0.15,
+                          radius: screenHeight * 0.080,
                           backgroundImage: const AssetImage('assets/user.png'),
                         ),
                       ),
@@ -69,7 +71,7 @@ class SignupScreen extends StatelessWidget {
                                   const VendorLoginSignupScreen()),
                         ),
                         child: CircleAvatar(
-                            radius: screenHeight * 0.15,
+                            radius: screenHeight * 0.080,
                             backgroundImage:
                                 const AssetImage('assets/vendor.png')),
                       ),

@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 class VendorLoginSignupScreen extends StatelessWidget {
   const VendorLoginSignupScreen({super.key});
+  static const routeName = '/vendorLoginSignUp';
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +22,14 @@ class VendorLoginSignupScreen extends StatelessWidget {
             const Flexible(
                 child: Image(image: AssetImage('assets/circle_cow.png'))),
             ReusableSizedBox(height: screenHeight * 0.080),
-            CustomText(
-              text: 'Quality means doing it right\n    when no one is looking',
-              color: const Color(0xFF332749),
-              size: screenHeight * 0.04,
-              FontWeight: FontWeight.bold,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CustomText(
+                text: 'Quality means doing it right\nwhen no one is looking',
+                color: const Color(0xFF332749),
+                size: screenHeight * 0.04,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             ReusableSizedBox(height: screenHeight * 0.099),
             AppButton(

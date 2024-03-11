@@ -7,18 +7,21 @@ class CustomText extends StatelessWidget {
       required this.text,
       required this.color,
       this.size,
-      this.FontWeight});
+      this.maxLines,
+      this.fontWeight});
   final String text;
   final Color color;
   final double? size;
-  final dynamic FontWeight;
+  final dynamic fontWeight;
+  final int? maxLines;
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
+      maxLines: maxLines,
       style: GoogleFonts.leagueSpartan(
-          color: color, fontSize: size, fontWeight: FontWeight),
+          color: color, fontSize: size, fontWeight: fontWeight),
     );
   }
 }
