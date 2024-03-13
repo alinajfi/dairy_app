@@ -43,7 +43,7 @@ class UserLoginSignup extends StatelessWidget {
               backgroundColor: const Color(0xFF332749),
               textColor: Colors.white,
               borderRadius: 20.0,
-              fontSize: 10,
+              fontSize: 25,
             ),
             ReusableSizedBox(height: screenHeight * 0.020),
             AppButton(
@@ -56,9 +56,10 @@ class UserLoginSignup extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => UserSignupScreen()),
                 );
               },
-              backgroundColor: Colors.white70,
+              backgroundColor: Colors.white,
               textColor: const Color(0xFF332749),
               borderRadius: 20.0,
+              fontSize: 25,
             )
           ],
         ),

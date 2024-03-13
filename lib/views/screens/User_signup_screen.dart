@@ -88,9 +88,9 @@ class UserSignupScreen extends StatelessWidget {
                 width: screenWidth * 0.70,
                 onPressed: () {},
                 backgroundColor: const Color(0xFF332749),
-                textColor: Colors.white70,
+                textColor: Colors.white,
                 borderRadius: 20.0,
-                fontSize: 20,
+                fontSize: 25,
               ),
             ),
             Center(

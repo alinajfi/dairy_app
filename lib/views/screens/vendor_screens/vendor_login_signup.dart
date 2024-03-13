@@ -25,7 +25,7 @@ class VendorLoginSignupScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: CustomText(
-                text: 'Quality means doing it right\nwhen no one is looking',
+                text: 'Quality means doing it right when no one is\nlooking',
                 color: const Color(0xFF332749),
                 size: screenHeight * 0.04,
                 fontWeight: FontWeight.bold,
@@ -45,7 +45,7 @@ class VendorLoginSignupScreen extends StatelessWidget {
               backgroundColor: const Color(0xFF332749),
               textColor: Colors.white,
               borderRadius: 20.0,
-              fontSize: 10,
+              fontSize: 25,
             ),
             ReusableSizedBox(height: screenHeight * 0.020),
             AppButton(
@@ -61,7 +61,7 @@ class VendorLoginSignupScreen extends StatelessWidget {
               backgroundColor: Colors.white70,
               textColor: const Color(0xFF332749),
               borderRadius: 20.0,
-              fontSize: 10,
+              fontSize: 25,
             )
           ],
         ),

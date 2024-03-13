@@ -22,132 +22,144 @@ class VendorSignupScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.only(right: 10, left: 10),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CustomText(
-              text: 'Welcome!',
-              color: Colors.black,
-              size: screenHeight * 0.05,
-              fontWeight: FontWeight.bold,
-            ),
-            CustomText(
-              text: 'Create an account',
-              color: Colors.black,
-              size: screenHeight * 0.04,
-            ),
-            Center(
-              child: CircleAvatar(
-                radius: screenHeight * 0.06,
-              ),
-            ),
-            CustomText(
-              text: '      Email Adress',
-              color: Colors.black,
-              size: screenHeight * 0.03,
-            ),
-            ReuseableFormfeild(
-                hintText: 'Enter Your Email',
-                icon: Icons.mail,
-                controller: emailController),
-            CustomText(
-              text: '    Password',
-              color: Colors.black,
-              size: screenHeight * 0.03,
-            ),
-            ReuseableFormfeild(
-              hintText: 'Enter Your Password',
-              icon: Icons.key,
-              controller: passwordController,
-              obscureText: true,
-            ),
-            CustomText(
-              text: '    Phone Number',
-              color: Colors.black,
-              size: screenHeight * 0.03,
-            ),
-            ReuseableFormfeild(
-              hintText: 'Enter Phone No',
-              icon: Icons.phone,
-              controller: phoneController,
-            ),
-            CustomText(
-              text: '    Business Name',
-              color: Colors.black,
-              size: screenHeight * 0.03,
-            ),
-            ReuseableFormfeild(
-              hintText: 'Enter Business Name',
-              icon: Icons.person,
-              controller: businessController,
-            ),
-            ReusableSizedBox(height: screenHeight * 0.010),
-            Center(
-              child: AppButton(
-                text: 'Sign Up',
-                height: screenHeight * 0.090,
-                width: screenWidth * 0.70,
-                onPressed: () {},
-                backgroundColor: const Color(0xFF332749),
-                textColor: Colors.white70,
-                borderRadius: 20.0,
-                fontSize: 20,
-              ),
-            ),
-            Center(
-                child: CustomText(
-              text: 'Or Sign Up with',
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-              size: screenHeight * 0.020,
-            )),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Flexible(
-                    child: IconButton(
-                        onPressed: () {}, icon: const Icon(Icons.mail))),
-                Flexible(
-                  child: IconButton(
+    return SafeArea(
+      child: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.only(right: 10, left: 10),
+          child: SingleChildScrollView(
+            physics: MediaQuery.of(context).viewInsets.bottom > 0
+                ? const BouncingScrollPhysics()
+                : const NeverScrollableScrollPhysics(),
+            child: SizedBox(
+              width: screenWidth,
+              height: screenHeight * 0.95,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CustomText(
+                    text: 'Welcome!',
+                    color: Colors.black,
+                    size: screenHeight * 0.05,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  CustomText(
+                    text: 'Create an account',
+                    color: Colors.black,
+                    size: screenHeight * 0.04,
+                  ),
+                  Center(
+                    child: CircleAvatar(
+                      radius: screenHeight * 0.06,
+                    ),
+                  ),
+                  CustomText(
+                    text: '      Email Adress',
+                    color: Colors.black,
+                    size: screenHeight * 0.03,
+                  ),
+                  ReuseableFormfeild(
+                      hintText: 'Enter Your Email',
+                      icon: Icons.mail,
+                      controller: emailController),
+                  CustomText(
+                    text: '    Password',
+                    color: Colors.black,
+                    size: screenHeight * 0.03,
+                  ),
+                  ReuseableFormfeild(
+                    hintText: 'Enter Your Password',
+                    icon: Icons.key,
+                    controller: passwordController,
+                    obscureText: true,
+                  ),
+                  CustomText(
+                    text: '    Phone Number',
+                    color: Colors.black,
+                    size: screenHeight * 0.03,
+                  ),
+                  ReuseableFormfeild(
+                    hintText: 'Enter Phone No',
+                    icon: Icons.phone,
+                    controller: phoneController,
+                  ),
+                  CustomText(
+                    text: '    Business Name',
+                    color: Colors.black,
+                    size: screenHeight * 0.03,
+                  ),
+                  ReuseableFormfeild(
+                    hintText: 'Enter Business Name',
+                    icon: Icons.person,
+                    controller: businessController,
+                  ),
+                  ReusableSizedBox(height: screenHeight * 0.010),
+                  Center(
+                    child: AppButton(
+                      text: 'Sign Up',
+                      height: screenHeight * 0.090,
+                      width: screenWidth * 0.70,
                       onPressed: () {},
-                      icon: const Icon(Icons.facebook_outlined)),
-                ),
-                Flexible(
-                  child: IconButton(
-                      onPressed: () {}, icon: const Icon(Icons.apple_sharp)),
-                ),
-              ],
+                      backgroundColor: const Color(0xFF332749),
+                      textColor: Colors.white,
+                      borderRadius: 20.0,
+                      fontSize: 25,
+                    ),
+                  ),
+                  Center(
+                      child: CustomText(
+                    text: 'Or Sign Up with',
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    size: screenHeight * 0.020,
+                  )),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Flexible(
+                          child: IconButton(
+                              onPressed: () {}, icon: const Icon(Icons.mail))),
+                      Flexible(
+                        child: IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.facebook_outlined)),
+                      ),
+                      Flexible(
+                        child: IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.apple_sharp)),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CustomText(
+                        text: 'Already have an account?',
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        size: screenHeight * 0.020,
+                      ),
+                      Flexible(
+                        child: TextButton(
+                            onPressed: () {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => LoginPageVendor()),
+                              );
+                            },
+                            child: const Text(
+                              'Log in',
+                              style: TextStyle(color: Colors.purple),
+                            )),
+                      )
+                    ],
+                  )
+                ],
+              ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CustomText(
-                  text: 'Already have an account?',
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  size: screenHeight * 0.020,
-                ),
-                Flexible(
-                  child: TextButton(
-                      onPressed: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => LoginPageVendor()),
-                        );
-                      },
-                      child: const Text(
-                        'Log in',
-                        style: TextStyle(color: Colors.purple),
-                      )),
-                )
-              ],
-            )
-          ],
+          ),
         ),
       ),
     );
